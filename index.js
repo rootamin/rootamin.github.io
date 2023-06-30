@@ -21,11 +21,10 @@ let addNewLink = (link, namea)=>{
     linksDiv.appendChild(linkDiv);
 }
 
-addNewLink("https://www.google.com/", "Google");
+addNewLink("https://github.com/rootamin", "GitHub");
 addNewLink("https://www.youtube.com/", "YouTube");
-addNewLink("https://www.reddit.com/", "Reddit");
-addNewLink("https://fitgirl-repacks.site/", "Piracy");
-addNewLink("https://www.pornhub.com/", "BSs");
-addNewLink("https://www.linkedin.com/feed/", "CORPO");
-
+addNewLink("https://www.twitch.tv/", "Twitch");
+addNewLink("https://mail.google.com/mail/u/0/#inbox", "Gmail");
+addNewLink("https://twitter.com/home", "Twitter");
+addNewLink("https://kick.com/", "Kick");
 
