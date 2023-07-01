@@ -40,5 +40,5 @@ addNewLink("https://www.youtube.com/", "YouTube", "./youtube.png");
 addNewLink("https://www.twitch.tv/", "Twitch", "twitch.png");
 addNewLink("https://mail.google.com/mail/u/0/#inbox", "Gmail", "./gmail.ico");
 addNewLink("https://twitter.com/home", "Twitter", "twitter.png");
-addNewLink("https://kick.com/", "Kick", "kick.png");
+addNewLink("https://www.crunchyroll.com/", "CrunchyRoll", "crunchyroll.webp");
 
