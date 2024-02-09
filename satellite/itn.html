@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0; height:100vh; overflow:hidden">
+
+<div id="container" style="position: relative; width: 100%; height: 100%;">
+    <iframe id="myFrame" src='http://www.parsatv.com/embed.php?name=ITN-TV&auto=true' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling='no' border='0' frameborder='0' allowfullscreen allow='autoplay; encrypted-media'></iframe>
+    <div id="buttons" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+        <button id="closeButton" onclick="closeTab();">Close Tab</button>
+    </div>
+</div>
+
+<style>
+
+
+    #closeButton {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background-color: rgba(255, 0, 0, 0.5);
+        color: white;
+        font-size: 24px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px;
+        box-sizing: border-box;
+        cursor: pointer;
+        opacity: 0;
+        animation: fadeIn 500ms forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+
+<script>
+    var timeout;
+
+
+    function openFullscreen() {
+        var elem = document.getElementById("container");
+        elem.style.width = "100%";
+        elem.style.height = "100vh";
+    }
+
+    document.onmousemove = function() {
+        document.getElementById("buttons").style.display = "flex";
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            document.getElementById("buttons").style.display = "none";
+        }, 1000);
+    }
+
+    function closeTab() {
+        // Send a message to the extension
+        window.postMessage({ type: 'CLOSE_TAB' }, '*');
+
+        // Delay the closing of the tab by 2 seconds
+        setTimeout(function() {
+            window.close();
+        }, 500);
+    }
+</script>
+
+</body>
+</html>
